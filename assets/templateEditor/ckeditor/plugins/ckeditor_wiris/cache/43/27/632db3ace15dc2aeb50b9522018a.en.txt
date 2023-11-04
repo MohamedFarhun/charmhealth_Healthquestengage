@@ -1,0 +1,1 @@
+{"result":{"text":"capital psi subscript s equals psi subscript w plus psi subscript p"},"status":"ok"}

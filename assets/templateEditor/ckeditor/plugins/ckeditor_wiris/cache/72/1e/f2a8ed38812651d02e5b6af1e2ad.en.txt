@@ -1,0 +1,1 @@
+{"result":{"text":"y open parentheses x comma t close parentheses equals 2 space sin left parenthesis 2 pi divided by 3 space x right parenthesis space cos space left parenthesis 100 space pi t right parenthesis"},"status":"ok"}

@@ -1,0 +1,1 @@
+{"result":{"text":"Mn to the power of 3 plus sign"},"status":"ok"}

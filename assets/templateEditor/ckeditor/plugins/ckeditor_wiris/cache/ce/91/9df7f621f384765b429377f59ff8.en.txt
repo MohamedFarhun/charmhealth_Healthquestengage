@@ -1,0 +1,1 @@
+{"result":{"text":"e to the power of negative sign kt end exponent"},"status":"ok"}

@@ -1,0 +1,375 @@
+{%load static %}
+{% load mathfilters %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+  <!--[if lt IE 10]>
+<link rel="stylesheet" href="assets/css/no-ie.css">
+<div class="no-iemsg">
+    <span><img src="assets/images/no-ie.jpg" width="80" height="80"></span>
+    <h1>Your browser is no longer supported !</h1>
+    <h3>For better security and optimized experience, please upgrade your browser or install the latest version of any other browser.</h3>
+    Try Other latest browsers - <a target="_blank" href="https://www.google.com/chrome/">Google Chrome</a> - <a target="_blank" href="https://www.mozilla.org/en-US/firefox/new/">Mozilla
+        Firefox</a>
+</div>                                     
+<![endif]-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthQuest Engage - Patient Dashboard</title>
+  <meta name="description" content="">
+  <link rel="shortcut icon" href="{%static 'assets'%}">
+  <link href="{%static 'bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" type="image/png" href="{%static 'images/healthlink_logo.jpg'%}" />
+  <link href="{%static 'css/animate.css'%}" rel="stylesheet" type="text/css" />
+  <link href="{%static 'plugins/dual-selectbox/src/bootstrap-duallistbox.css'%}" rel="stylesheet">
+  <link rel="stylesheet" href="{%static 'plugins/owl-carousel/owl.carousel.css'%}">
+  <link rel="stylesheet" href="{%static 'plugins/owl-carousel/owl.theme.css'%}">
+  <link href="{%static 'css/admin-style.css'%}" rel="stylesheet" type="text/css" />
+  <link href="{%static 'css/dropdown.css'%}" rel="stylesheet" type="text/css" />
+  <link href="{%static 'plugins/fontawesome6/css/fontawesome.css'%}" rel="stylesheet">
+  <link href="{%static 'plugins/fontawesome6/css/brands.css'%}" rel="stylesheet">
+  <link href="{%static 'plugins/fontawesome6/css/solid.css'%}" rel="stylesheet">
+</head>
+
+<style>
+  .profile_container{ display: flex; flex-direction: row; justify-content: space-between;}
+    .profile{ background: #ebf4f9; padding: 10px; width: 25%; text-align: center;}
+    .profile h1{ font-size: 20px; color: #014aa0; font-weight: bold;margin:0px}
+    .profile h1 span{ font-size: 16px; color: #666; font-weight: bold;display:block}
+    .profile img{ border: #fff 1px solid; margin: 20px 0px; max-height: 200px; max-width: 80%;  }
+    .profile .profile_details{ display: flex; flex-direction: row; background: #fff; padding: 15px 0px; width: 100%; justify-content: space-between;}
+    .profile .profile_details h2{ color: #999999; font-size: 15px; text-align: center; border-right: #f3f3f3 2px solid; width: 25%;}
+    .profile .profile_details h2:last-child{ border-right: 0px;}
+    .profile .profile_details h2 span{ color: #014aa0; font-size: 22px; font-weight: bold; display: block;}
+    .profile .profile_details h2 span small{display:inline-block;font-size:14px}
+    .profile .profile_button{ display: flex; justify-content: center; margin-top: 20px;}
+    .profile .profile_button a{ background: #ffb236; display: inline-block; border-radius: 5px; padding: 8px 15px; margin: 5px; font-size: 15px; color: #fff; text-transform: uppercase; text-decoration: none;}
+    .profile .profile_button a:hover{ background: #817cce;}
+
+    .chat_area{ background: #fff; padding: 10px; width: 30%;}
+    .chat_area h2 { width: 100%; font-size: 20px; color: #014aa0; font-weight: bold; ext-transform: uppercase; text-align: center; border-bottom: #fff 3px solid; adding-bottom: 15px; margin-bottom: 20px;  }
+    .regibox {display: flex;flex-wrap: wrap;}
+    .regibox .form-group {width: 100%; margin: 10px 20px;}
+
+
+    .mooddiary_container{ background: #ebf4f9; padding: 10px; width: 45%; display: flex; flex-wrap: wrap; justify-content: space-between; }
+    .mooddiary_container h3{ width: 100%; font-size: 20px; color: #014aa0; font-weight: bold; text-transform: uppercase; text-align: center; border-bottom: #fff 3px solid; padding-bottom: 15px; margin-bottom: 20px;}
+    .mooddiary_container .diary_details{ width: 47%; border-right: #fff 2px solid; padding: 10px; }
+    .mooddiary_container .diary_details:last-child{ border-right: 0px;}
+    .mooddiary_container .diary_details h4{ font-size: 15px;margin-top:15px; color: #ff5a00; font-weight: bold; display: block; border-bottom: #fff 1px solid;}
+    .mooddiary_container .diary_details .data{ display: flex; flex-direction: row; justify-content: space-between; border-bottom: #d9d9d9 1px solid;}
+    .mooddiary_container .diary_details .data span{ max-width: 20%; width: 20%; text-align: center; border-left: #d9d9d9 1px solid;}
+</style>
+
+<body class="adminbody">
+  <div id="main">
+    <!-- top bar navigation -->
+    <div class="headerbar">
+      <div class="stky">
+        <div>
+        <!-- LOGO -->
+          <div class="headerbar-left">
+            <a href="patientdashboard" class="logo"> <img alt="Logo" src="{%static 'images/logo_png.png'%}" /> </a>
+          </div>
+          <nav class="navbar-custom">
+            <small class="remainder"><a href="#"><i class="fas fa-bell"></i></a><span>0</span></small>
+            <ul class="list-inline float-right mb-0">
+              <li class="list-inline-item dropdown notif"> <a class="nav-link dropdown-toggle nav-user"
+                  data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false"> <span
+                    class="tlogdwn"><img src="{%static 'images/admin-user.png'%}" alt="Profile image"
+                      class="avatar-rounded"></span></a>
+                <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                  <!-- item-->
+                  <div class="drp-box">
+                    <div class="drp-head">
+                      <span><img src="{%static 'images/admin-user.png'%}" alt="Profile image"></span>
+                      <ul>
+                        <li><b>Patient</b><small>{{user.username}}</small></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- item-->
+                  {% if user.is_authenticated %}
+                  <div class="drp-logout"><a href="logout" class="notify-item"> <i class="fas fa-sign-out-alt"></i>
+                      <span>Logout</span> </a> </div>
+                    {% endif %}
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+    
+        <div>
+          <div id="navbar" class="nav-bg navbar-dark clearfix">
+            <div class="max-cntr optrow1 navrobar">
+              
+              <nav class="navbar navbar-expand-lg">
+
+                <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#bootnavbar" aria-controls="bootnavbar" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="menuicon"><i class="fas fa-bars"></i></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="bootnavbar">
+                    <ul class="navbar-nav ml-auto">
+                      <li class="nav-item"><a class="nav-link" href="patientdashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="questionnaire"><i class="fas fa-chart-pie"></i> Questionnaire</a></li>
+                        <li class="nav-item"><a class="nav-link" href="intake"><i class="fas fa-bell"></i> Intake form</a></li>
+                        <li class="nav-item"><a class="nav-link" href="report"><i class="fas fa-bell"></i> Reports</a></li>
+                    </ul>
+                </div>
+                <!-- /.nav-collapse -->
+          </nav>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Navigation -->
+
+    <div class="content-page">
+      <!-- Start content -->
+      <div class="content">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-xl-12 p-0">
+              <div class="breadcrumb-holder">
+                <h1 class="main-title float-left"> <i class="fas fa-file-signature"></i>Welcome {{user.username}} </h1>
+              </div>
+            </div>
+          </div>
+          <!-- end row -->
+          <div class="row">
+            <div class="col-xl-12 p-0">
+              <div class="body-content mb-3">
+                <div class="tbl-frm">
+                  <div class="profile_container">
+                    <div class="profile" >
+                        <h1>Welcome {{user.username}} <span>Phone no:- {{user_info.PhoneNumber}}</span></h1>
+                        <img src="{%static 'images/person.jpg'%}">
+                        <div class="profile_details">
+                            <h2>Age <span>{{lastdetails.Age}}</span></h2>
+                            <h2>Height <span>{{lastdetails.Height}}</span></h2>
+                            <h2>Weight <span>{{lastdetails.Weight}}</span></h2>
+                            <h2>BMI <span>{{lastdetails.BMI}} <small>KG/MZ</small></span></h2>
+                        </div>
+                        <div class="profile_button">
+                            <a href="questionnaire">Questionnaire</a>
+                            <a href="intake">Intake form</a>
+                        </div>
+                    </div>
+
+                    
+                    <div class="chat_area">
+                    <form action='report' method="post" class="appointmentform" id="appointmentform">
+                      {% csrf_token %}
+                      <h2>Report Details</h2>
+                      {% for message in messages%}
+        <div class="success" id="success" style="font-size:14px;padding-bottom:15px;background:#8bc24a;padding: 10px 0 10px 0;margin-bottom: 15px;border-radius: 7px;">
+            <p style="color: darkgreen; font-size:14px;text-align:center;margin-bottom:0px">{{message}}</p>
+        </div>
+        {% endfor %}
+                      <div class="regibox">
+                        <div class="form-group">
+                          <label class="col-md-4 p-0 m-0" for="game">Enjoyed the game</label>
+                                 <select class="col-md-7" name="game" id="game">
+                                 <option value="yes">Yes</option>
+                                <option value="maybe">Maybe</option>
+                                <option value="no">No</option>
+                                 </select>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-md-4 p-0 m-0" for="intake">Intake Form Taken</label>
+                          <select class="col-md-7" name="intake" id="intake">
+                            <option value="yes">Yes</option>
+                           <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-md-4 p-0 m-0" for="questionnaire_answered">Questionnaire form taken</label>
+                          <select class="col-md-7" name="questionnaire_answered" id="questionnaire_answered">
+                            <option value="yes">Yes</option>
+                           <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                          <button class="btn btn-primary" type="submit">Submit</button>
+                        </div>
+                      </form>
+                      </div>
+                  </div>
+
+            
+                    <div class="mooddiary_container">
+                        <h3>Patient Mood Diary</h3>
+            
+                        <div class="diary_details">
+                            <div class="diary_content">
+                                <div class="data">Rate your mood today on a scale of 1 to 10 <span>{{intake_details.mood}}</span></div>
+                            </div>
+                            <div class="diary_content">
+                                <h4>Mood-Related Factors:</h4>
+                                <div class="data">Hours of nighttime sleep: <span>{{intake_details.hours}}</span></div>
+                                <div class="data">Physical Activity <span>{{intake_details.physical}}</span></div>
+                                <div class="data">Relaxation time <span>{{intake_details.relaxation}}</span></div>
+                            </div>
+                            <div class="diary_content">
+                                <h4>Social and Emotional Factors:</h4>
+                                <div class="data">Went to a support group today?  <span>{{intake_details.support}}</span></div>
+                                <div class="data">Spent time talking with (or writing to) a supportive person? <span>{{intake_details.supportive}}</span></div>
+                            </div>
+                        </div>
+                
+                        <div class="diary_details">
+                            <div class="diary_content">
+                                <h4>Medication and Health:</h4>
+                                <div class="data">Experienced any medication side effects? <span>{{intake_details.side_effects}}</span></div>
+                                <div class="data">Any physical illness symptoms today? <span>{{intake_details.illness}}</span></div>
+                            </div>
+                            <div class="diary_content">
+                                <h4>Life Event and Personal Factors:</h4>
+                                <div class="data">Did you experience any major life events today? <span>{{intake_details.events}}</span></div>
+                                <div class="data">Menstrual period (for females):  <span>{{intake_details.menstrual}}</span></div>
+                            </div>
+                            <div class="diary_content">
+                                <h4>Substance Use:</h4>
+                                <div class="data">Did you drink alcohol today? <span>{{intake_details.today}}</span></div>
+                                <div class="data">Did you use drugs today? <span>{{intake_details.drugs}}</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+<div class="mt-5">
+    <div class="col-12 tlb-ad-btn"><h6>Latest Reports</h6></div>
+    <div class="table-responsive tbl-bdy">
+      <table class="table table-bordered table-hover table-sm">
+        <thead>
+          <tr>
+            <th class="text-center">SI.No</th>
+            <th class="text-center">Enjoyed the games</th>
+            <th class="text-center">Intake form taken</th>
+            <th class="text-center">Questionnaire form taken</th>
+            <th class="text-center">No of Questions Answered</th>
+            <th class="text-center">Percentage of discount for next checkup</th>
+            <th class="text-center">Free Checkup</th>
+            <th class="text-center">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for report in allreports%}
+          <tr>
+            <td class="text-center">{{report.id}}</td>
+            <td class="text-center">{{report.game}}</td>
+            <td class="text-center">{{report.intake}}</td>
+            <td class="text-center">{{report.questionnaire_answered}}</td>
+            <td class="text-center">{{user_profile_score.scores}}</td>
+            <td class="text-center">{{ user_profile_score.scores|floatformat:2|mul:100|div:20 }}%</td>
+            <td class="text-center">{%if user_profile_score.scores|floatformat:2|mul:100|div:20 < 100 %} No {%else%} Yes {% endif %} </td>
+            <td class="text-center">
+              <div class="tooltip-demo">
+                <a href="#" class="naminate_yes">Pending</a>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+      {% include "footer.html" %}
+    </div>
+  </div>
+
+  <a href="#" class="scrollToTop" title="Scroll To Top"><i class="far fa-arrow-alt-circle-up"></i></a>
+
+  <script src="{%static 'js/jquery.min.js'%}"></script>
+  <script src="{%static 'js/popper.min.js'%}"></script>
+  <script src="{%static 'bootstrap/js/bootstrap.min.js'%}"></script>
+  <script src="{%static 'js/detect.js'%}"></script>
+  <script src="{%static 'js/fastclick.js'%}"></script>
+  <script src="{%static 'js/jquery.nicescroll.js'%}"></script>
+  <script src="{%static 'js/myadmin.js'%}"></script>
+
+  <script>
+    $(document).ready(function () {
+      var stickyNavTop = $('.stky').offset().top;
+      var stickyNav = function () {
+        var scrollTop = $(window).scrollTop();
+        if (scrollTop > stickyNavTop) {
+          $('.stky').addClass('sticky');
+        } else {
+          $('.stky').removeClass('sticky');
+        }
+      };
+      stickyNav();
+      $(window).scroll(function () {
+        stickyNav();
+      });
+    });
+  </script>
+
+  <script>
+    $('.drsub').click(function (event) {
+      event.preventDefault();
+    });
+
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+  
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      //Check to see if the window is top if not then display button
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+          $('.scrollToTop').fadeIn();
+        } else {
+          $('.scrollToTop').fadeOut();
+        }
+      });
+
+      //Click event to scroll to top
+      $('.scrollToTop').click(function () {
+        $('html, body').animate({
+          scrollTop: 0
+        }, 800);
+        return false;
+      });
+    });
+  </script>
+
+  <script type="text/javascript">
+    setTimeout(function () {
+      $(".success").hide()
+  }, 4000);
+</script>
+
+
+<link href="{%static 'plugins/multiselect/css/bootstrap-multiselect.css'%}" rel="stylesheet" type="text/css" />
+<script src="{%static 'plugins/multiselect/js/bootstrap-multiselect.js'%}"></script>
+<script type="text/javascript">
+    $('.multiselect').multiselect({
+    enableHTML: true,
+    optionLabel: function(element) {
+        return '<img src="'+$(element).attr('data-img')+'"> '+$(element).text();
+    },
+    // ...
+});
+</script>

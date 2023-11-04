@@ -1,0 +1,1 @@
+{"result":{"text":"24 divided by n to the power of 2 space end exponent space h r"},"status":"ok"}

@@ -1,0 +1,1 @@
+{"result":{"text":"open square brackets Ar close square brackets space 3 d to the power of 10 4 s squared 4 p to the power of 6"},"status":"ok"}

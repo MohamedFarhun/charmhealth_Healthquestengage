@@ -1,0 +1,1 @@
+{"result":{"text":"sin open parentheses 30 close parentheses"},"status":"ok"}

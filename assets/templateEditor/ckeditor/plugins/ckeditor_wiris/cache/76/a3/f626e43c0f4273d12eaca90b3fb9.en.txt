@@ -1,0 +1,1 @@
+{"result":{"text":"L divided by 4"},"status":"ok"}

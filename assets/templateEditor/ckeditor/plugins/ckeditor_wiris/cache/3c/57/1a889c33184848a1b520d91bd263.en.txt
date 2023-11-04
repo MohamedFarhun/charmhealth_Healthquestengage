@@ -1,0 +1,1 @@
+{"result":{"text":"Sn O subscript 2 open parentheses s close parentheses and 2 H subscript 2 open parentheses g close parentheses equilibrium 2 H subscript 2 O open parentheses g close parentheses and Sn open parentheses l close parentheses"},"status":"ok"}

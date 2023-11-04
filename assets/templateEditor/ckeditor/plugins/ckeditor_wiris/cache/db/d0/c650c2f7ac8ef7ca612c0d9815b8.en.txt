@@ -1,0 +1,1 @@
+{"result":{"text":"1 comma 44 cross times 10 to the power of 5 space n e w t o n minus m to the power of negative 2 end exponent"},"status":"ok"}

@@ -1,0 +1,1 @@
+{"result":{"text":"X subscript 5 space equals space 30"},"status":"ok"}

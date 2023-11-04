@@ -1,0 +1,1 @@
+{"result":{"text":"Ca to the power of 2 plus sign greater than K to the power of plus sign greater than Cl to the power of minus sign greater than S to the power of 2 minus sign"},"status":"ok"}

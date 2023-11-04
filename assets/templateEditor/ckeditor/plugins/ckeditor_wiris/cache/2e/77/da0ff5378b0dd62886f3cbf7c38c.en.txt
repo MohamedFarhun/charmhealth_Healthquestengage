@@ -1,0 +1,1 @@
+{"result":{"text":"500 space g space d y n e divided by c m squared"},"status":"ok"}

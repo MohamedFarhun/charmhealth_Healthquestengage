@@ -1,0 +1,1 @@
+{"result":{"text":"2 r to the power of plus sign and 2 r to the power of minus sign double bond a semicolon"},"status":"ok"}

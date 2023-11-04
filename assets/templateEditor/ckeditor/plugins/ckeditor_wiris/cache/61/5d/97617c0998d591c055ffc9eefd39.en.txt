@@ -1,0 +1,1 @@
+{"result":{"text":"stack F subscript 1 with rightwards harpoon with barb upwards on top equals 2 i minus 5 j"},"status":"ok"}

@@ -1,0 +1,216 @@
+@charset "UTF-8";
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.bootbox-calc .modal-dialog{ max-width:700px; margin-top: 10%;}
+
+@media print {
+  .hidden-print {
+    display: none !important; } }
+.calc-row {
+  margin-left: 0px;
+  margin-right: -1px; }
+  .calc-row:before, .calc-row:after {
+    content: " ";
+    display: table; }
+  .calc-row:after {
+    clear: both; }
+  .calc-row .calc-top {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 0.5px;
+    padding-right: 0.5px;
+    position: relative;
+    min-height: 1px;
+    padding-left: 0.5px;
+    padding-right: 0.5px; }
+    @media (min-width: 992px) {
+      .calc-row .calc-top {
+        float: left;
+        width: 100%; } }
+  .calc-row .calc-button {
+    position: relative;
+    float: left;
+    width: 25%;
+    min-height: 1px;
+    padding-left: 0.5px;
+    padding-right: 0.5px;
+    position: relative;
+    min-height: 1px;
+    padding-left: 0.5px;
+    padding-right: 0.5px; }
+    @media (min-width: 992px) {
+      .calc-row .calc-button {
+        float: left;
+        width: 10%; } }
+  .calc-row .calc-button-perm {
+    position: relative;
+    float: left;
+    width: 25%;
+    min-height: 1px;
+    padding-left: 0.5px;
+    padding-right: 0.5px;
+    position: relative;
+    min-height: 1px;
+    padding-left: 0.5px;
+    padding-right: 0.5px; }
+    @media (min-width: 992px) {
+      .calc-row .calc-button-perm {
+        float: left;
+        width: 10%; } }
+  .calc-row .calc-button-perm-wide {
+    position: relative;
+    float: left;
+    width: 50%;
+    min-height: 1px;
+    padding-left: 0.5px;
+    padding-right: 0.5px;
+    position: relative;
+    min-height: 1px;
+    padding-left: 0.5px;
+    padding-right: 0.5px;
+    text-align: left;
+    padding-left: 22px; }
+    @media (min-width: 992px) {
+      .calc-row .calc-button-perm-wide {
+        float: left;
+        width: 20%; } }
+
+
+.container {padding: 0px; margin: 0px;}
+
+.display {
+  position: relative; }
+
+#control-bar {
+  padding: 2px 0 0 8px; }
+  #control-bar li {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    margin-right: 4px;
+    position: relative; }
+
+.transparent-blur {
+  background: transparent;
+  box-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.35); }
+
+#control-bar {
+  color: rgba(0, 0, 0, 0.5); }
+  #control-bar ul:hover > li:before {
+    display: inline-block; }
+
+.calc-quit {
+  background-color: #fe534d; }
+  .calc-quit:before {
+    content: "×";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: 5px;
+    left: 3px;
+    line-height: 0;
+    font-size: 10px;
+    display: none; }
+
+.calc-min {
+  background-color: #ffbd2e; }
+  .calc-min:before {
+    content: "−";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: 5px;
+    left: 3px;
+    line-height: 0;
+    font-size: 10px;
+    display: none; }
+
+.calc-max {
+  background-color: #29ca41; }
+  .calc-max:before {
+    content: "+";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: 5px;
+    left: 3px;
+    line-height: 0;
+    font-size: 10px;
+    display: none; }
+
+#display {
+  color: white;
+  font-weight: 100;
+  height: 58px;
+  text-align: right;
+  overflow: hidden; }
+
+#deg-rad-indicator {
+  color: white;
+  font-weight: 100;
+  font-size: 10px;
+  width: 5%;
+  height: 1rem;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 3%; }
+
+#display-window {
+  line-height: 55px;
+  padding-right: 16px;
+  vertical-align: top;
+  font-size: 50px; }
+
+.buttons {
+  text-align: center;
+  height: 55px;
+  vertical-align: middle; }
+  .buttons:not(:last-child) {
+    border-bottom: 1px solid #8e8e8e; }
+
+.bg-gray, .bg-orange {
+  font-size: 22px;
+  height: 100%;
+  padding-top: 12px; }
+
+.bg-gray {
+  color: black;
+  background-color: #e0e0e0;
+  border-right: 1px solid #8e8e8e; }
+
+.bg-orange {
+  color: white;
+  background-color: #f69231;
+  font-size: 27px;
+  line-height: 24px; }
+
+.scientific {
+  display: none;
+  font-size: 17px; }
+  @media (min-width: 992px) {
+    .scientific {
+      display: block; } }
+
+.second-function {
+  display: none; }
+
+#calc-degrees {
+  display: none; }
+
+.btn-equal {
+  border-radius: 0 0 3px 0; }
+
+/*# sourceMappingURL=main.css.map */

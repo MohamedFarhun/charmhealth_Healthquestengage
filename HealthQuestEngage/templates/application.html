@@ -1,0 +1,268 @@
+{%load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #e5f4ff;
+      }
+      .container {
+        max-width: 80%;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      label {
+        display: block;
+        margin: 10px 0;
+      }
+      input[type="text"],
+      input[type="password"],
+      input[type="email"],
+      input[type="date"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      input[type="radio"] {
+        margin-right: 5px;
+      }
+      .submit-btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        justify-content: center;
+        background: #ffb236; 
+        display: inline-block; 
+        border-radius: 5px;
+        padding: 8px 15px; 
+        margin: 5px; 
+        font-size: 15px; 
+        color: #fff; 
+        text-transform: uppercase;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .end-game-btn{
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        justify-content: center;
+        background: #ffb236; 
+        display: inline-block; 
+        border-radius: 5px;
+        padding: 8px 15px; 
+        margin: 5px; 
+        font-size: 15px; 
+        color: #fff; 
+        text-transform: uppercase;
+        text-decoration: none;
+        cursor: pointer;
+        margin-top:90px
+      }
+      .regibox {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .regibox .form-group{
+        width: 44%;
+        margin: 10px 20px;
+      }
+
+      @media only screen and (max-width: 1024px) {
+        .regibox .form-group {
+          width: 95%;
+          margin: 10px 0px;
+        }
+      }
+      h2{ font-size: 30px; color: #014aa0; font-weight: bold;margin:0px}
+      h3 {
+        border-bottom: 2px solid #4caf50;
+        padding-bottom: 10px;
+        margin-top: 20px;
+        text-align:left
+      }
+      h4{ font-size: 20px; color: #014aa0; font-weight: bold;margin:0px}
+        #memory-game .card {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: #e5f4ff;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+            position: relative;
+        }
+        .card-image {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        {% comment %} #puzzle-board{ display:flex; flex-wrap:wrap; width:900px !important; height:900px !important; margin:auto !important;  }
+        .puzzle-piece{ border:#ddd 1px solid !important; display: inline-block; width:300px !important; height: 300px !important;} {% endcomment %}
+
+        
+        .puzzle-piece{ border:red 1px solid !important; display: inline-block;}
+        .empty {
+          background: transparent !important;
+          border: 2px dashed #ccc;
+      }
+      .jqp-piece span {
+        color: #000 !important;
+      }
+
+      .jqPuzzle {
+        width:500px !important;
+        height: 500px !important;
+        display:none;
+        margin:auto;
+      }
+      .jqp-controls{ width:105%;}
+      .jqp-controls a{ background:#ffb236 !important; padding:8px 15px !important; margin:2px !important; font-size:15px !important; border-radius:4px !important; border:0px !important;}
+      .jqPuzzle .jqp-controls span{ background:#ffdfdf !important; margin-top:2px !important; margin-left:4px !important; padding:5px 10px 4px !important; border-radius:4px;}
+      .jqPuzzle.jqp-solved .jqp-controls span{ background:#9FEF86 !important; margin-top: }
+    </style>
+    </style>
+    {% include "doctorheader.html" %}
+<div class="text-center">
+    <h2>Application form</h2>
+    <form action='application' method="post">
+        {% csrf_token %}
+
+<!-- Personal Details -->
+<h3 style="width:100%; margin-top:30px;">Doctor Mood Diary</h3>
+<div class="regibox">
+  <h4>Mood-Related Factors:</h4>
+  <div class="form-group col-md-12" style="display:flex;">
+    <label class="col-md-4 p-0 m-0 text-left" for="mood">Rate your mood today on a scale of 1 to 10 *</label>
+    <div style="display:flex; justify-content:space-between; width:100%">
+      <div><input type="radio" id="html" name="mood" value="1"> <label for="html">1</label></div>
+      <div><input type="radio" id="html" name="mood" value="2"> <label for="html">2</label></div>
+      <div><input type="radio" id="html" name="mood" value="3"> <label for="html">3</label></div>
+      <div><input type="radio" id="html" name="mood" value="4"> <label for="html">4</label></div>
+      <div><input type="radio" id="html" name="mood" value="5"> <label for="html">5</label></div>
+      <div><input type="radio" id="html" name="mood" value="6"> <label for="html">6</label></div>
+      <div><input type="radio" id="html" name="mood" value="7"> <label for="html">7</label></div>
+      <div><input type="radio" id="html" name="mood" value="8"> <label for="html">8</label></div>
+      <div><input type="radio" id="html" name="mood" value="9"> <label for="html">9</label></div>
+      <div><input type="radio" id="html" name="mood" value="10"> <label for="html">10</label></div>
+    </div>
+      
+  </div>
+
+  <div class="form-group col-md-12" style="display:flex;">
+    <label class="col-md-4 text-left" for="hours">Hours of Night time sleep *</label>
+    <input type="text" id="hours" name="hours" />
+  </div>
+
+  <div class="form-group col-md-12" style="display:flex;">
+    <label class="col-md-4 text-left" for="physical">Physical Activity *</label>
+   <select name="physical" id="physical">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+   </select>
+  </div>
+
+  <div class="form-group col-md-12" style="display:flex;">
+    <label class="col-md-4 text-left" for="relaxation">Relaxation time *</label>
+    <select name="relaxation" id="relaxation">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+   </select>
+  </div>
+
+  <h4>Social and Emotional Factors:</h4>
+  <div class="form-group col-md-12" style="display:flex;">
+    <label class="col-md-4 text-left" for="support">Went to a support group today? *</label>
+    <select name="support" id="support">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+   </select>
+  </div>
+
+  <div class="form-group col-md-12" style="display:flex;">
+    <label class="col-md-4 text-left" for="supportive">Spent time talking with or writing to a supportive person? *</label>
+    <select name="supportive" id="supportive">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+   </select>
+  </div>
+  <h4>Medication and Health:</h4>
+
+  <div class="form-group col-md-12" style="display:flex;">
+    <label class="col-md-4 text-left" for="patients">No of patients treated *</label>
+    <input type="text" id="patients" name="patients" />
+  </div>
+
+  <div class="form-group col-md-12" style="display:flex;">
+    <label class="col-md-4 text-left" for="illness">Treated patients with care *</label>
+    <select name="illness" id="illness">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+   </select>
+  </div>
+  <h4>Life Event and Personal Factors:</h4>
+  <div class="form-group col-md-12" style="display:flex;">
+    <label class="col-md-4 text-left" for="events">Did you experience any major life events today? *</label>
+    <select name="events" id="events">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+   </select>
+  </div>
+  <div class="form-group col-md-12" style="display:flex;">
+    <label class="col-md-4 text-left" for="menstrual">Any sort of conflict between the patient *</label>
+    <select name="menstrual" id="menstrual">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+   </select>
+  </div>
+  <h4>Substance Use:</h4>
+  <div class="form-group col-md-12" style="display:flex;">
+    <label class="col-md-4 text-left" for="today">Did you drink alcohol today? *</label>
+    <select name="today" id="today">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+   </select>
+  </div>
+  <div class="form-group col-md-12" style="display:flex;">
+    <label class="col-md-4 text-left" for="drugs">Did you use drugs today? *</label>
+    <select name="drugs" id="drugs">
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+   </select>
+  </div>
+</div>
+
+<div style="text-align:center; padding-top:15px; margin-top:15px; border-top:#ddd 3px dotted; width:100%;">
+<button type="submit" class="submit-btn" style="display:inline-block; width:auto;">Submit</button>
+</div>
+
+</form>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% include "footer.html" %}

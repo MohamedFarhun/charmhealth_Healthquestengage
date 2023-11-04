@@ -1,0 +1,165 @@
+{%load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<style>
+  .question{display:flex;flex-direction:column;}
+  .question_start{ padding:15px; background:#f8f8f8; border: #ddd 1px solid; margin-bottom:10px; }
+  .question_start p{ margin-top:5px; font-weight: bold; }
+  .answer{display:flex;}
+  .answer p{ margin:0px; margin-right:20px;}
+  .answer label{display:flex; flex-direction:row;color:#024e76}
+  .answer label input{ margin-right:5px;}
+</style>
+{% include "header.html" %}
+
+      <form action="questionnaire" method="post">
+        {% if error_message %}
+          <p style="color: red;">{{ error_message }}</p>
+        {% endif %}
+        {% csrf_token %} 
+        <div class="questions">
+          {% for question in questions %}
+            <div class="question_start">
+              <p>{{question.Question_no}}. {{ question.text }}</p>
+              <div class="answer">
+                {% if question.question_type == 'MCQ' or question.question_type == 'TF' %}
+                  {# Display options as radio buttons #}
+                  {% for option in question.answeroption_set.all %}
+                      <p><label><input type="radio" name="question_{{ question.id }}" value="{{ option.id }}"> {{ option.text }}</label></p>
+                  {% endfor %}
+                {% elif question.question_type == 'MRQ' %}
+                  {# Display options as checkboxes #}
+                  {% for option in question.answeroption_set.all %}
+                  <p><label><input type="checkbox" name="question_{{ question.id }}" value="{{ option.id }}"> {{ option.text }}</label></p>
+                  {% endfor %}
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-main">
+<footer class="main-footer text-right">
+<span class="cptext">Copyright © 2023 HealthQuestEngage. All rights reserved</span>
+<span class="cptext1"> Developed by : HealthQuestEngage</span>
+</footer>
+</div>
+</div>
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            let allAnswered = true;
+            let checkboxes;
+            {% for question in questions %}
+                {% if question.question_type == 'MCQ' or question.question_type == 'TF' %}
+                    if (!document.querySelector(`input[name="question_{{ question.id }}"]:checked`)) {
+                        allAnswered = false;
+                    }
+                {% elif question.question_type == 'MRQ' %}
+                    let checkboxes = document.querySelectorAll(`input[name="question_{{ question.id }}"]:checked`);
+                    if (checkboxes.length < 1) {  // It's an error if no checkbox is selected for MRQ
+                        allAnswered = false;
+                    }
+                {% endif %}
+            {% endfor %}
+            
+            if (!allAnswered) {
+                event.preventDefault();
+                alert("Please answer all the questions before submitting.");
+            }
+        });
+        </script>
+        <a href="#" class="scrollToTop" title="Scroll To Top"><i class="far fa-arrow-alt-circle-up"></i></a>
+
+  <script src="{%static 'js/jquery.min.js'%}"></script>
+  <script src="{%static 'js/popper.min.js'%}"></script>
+  <script src="{%static 'bootstrap/js/bootstrap.min.js'%}"></script>
+  <script src="{%static 'js/detect.js'%}"></script>
+  <script src="{%static 'js/fastclick.js'%}"></script>
+  <script src="{%static 'js/jquery.nicescroll.js'%}"></script>
+  <script src="{%static 'js/myadmin.js'%}"></script>
+
+  <script>
+    $(document).ready(function () {
+      var stickyNavTop = $('.stky').offset().top;
+      var stickyNav = function () {
+        var scrollTop = $(window).scrollTop();
+        if (scrollTop > stickyNavTop) {
+          $('.stky').addClass('sticky');
+        } else {
+          $('.stky').removeClass('sticky');
+        }
+      };
+      stickyNav();
+      $(window).scroll(function () {
+        stickyNav();
+      });
+    });
+  </script>
+
+  <script>
+    $('.drsub').click(function (event) {
+      event.preventDefault();
+    });
+
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+  
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      //Check to see if the window is top if not then display button
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+          $('.scrollToTop').fadeIn();
+        } else {
+          $('.scrollToTop').fadeOut();
+        }
+      });
+
+      //Click event to scroll to top
+      $('.scrollToTop').click(function () {
+        $('html, body').animate({
+          scrollTop: 0
+        }, 800);
+        return false;
+      });
+    });
+  </script>
+
+  <script type="text/javascript">
+    setTimeout(function () {
+      $(".success").hide()
+  }, 4000);
+</script>
+
+
+<link href="{%static 'plugins/multiselect/css/bootstrap-multiselect.css'%}" rel="stylesheet" type="text/css" />
+<script src="{%static 'plugins/multiselect/js/bootstrap-multiselect.js'%}"></script>
+<script type="text/javascript">
+    $('.multiselect').multiselect({
+    enableHTML: true,
+    optionLabel: function(element) {
+        return '<img src="'+$(element).attr('data-img')+'"> '+$(element).text();
+    },
+    // ...
+});
+</script>
+  </body>
+</html>

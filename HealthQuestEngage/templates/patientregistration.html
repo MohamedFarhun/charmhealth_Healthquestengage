@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Registration</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #e5f4ff;
+      }
+      .container {
+        max-width: 80%;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      h3 {
+        border-bottom: 2px solid #4caf50;
+        padding-bottom: 10px;
+        margin-top: 20px;
+      }
+      label {
+        display: block;
+        margin: 10px 0;
+      }
+      input[type="text"],
+      input[type="password"],
+      input[type="email"],
+      input[type="date"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      input[type="radio"] {
+        margin-right: 5px;
+      }
+      .submit-btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        text-align: center;
+        cursor: pointer;
+      }
+      .regibox {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .regibox .form-group {
+        width: 44%;
+        margin: 10px 20px;
+      }
+
+      @media only screen and (max-width: 1024px) {
+        .regibox .form-group {
+          width: 95%;
+          margin: 10px 0px;
+        }
+      }
+    </style>
+  </head>
+  <body style="background-image: url('{%static 'images/login_bg.jpg'%}')">
+    <div class="container">
+      <div
+        style="
+          text-align: center;
+          margin-bottom: 20px;
+          padding-bottom: 20px;
+          border-bottom: #ededed 1px solid;
+        "
+      >
+        <img
+          style="width: 383px"
+          src="{%static 'images/healthlink_logo.jpg'%}"
+        />
+      </div>
+
+      <h2>Patient Registration</h2>
+      <form action='patientregistration' method="post">
+        {% csrf_token %}
+        <h3>Login Details</h3>
+        <div class="regibox">
+          <div class="form-group">
+            <label for="username">User Name *</label>
+            <input type="text" id="username" name="username" required />
+            <input type="hidden" id="userType" name="userType" value="0"/>
+          </div>
+          <div class="form-group">
+            <label for="password">Password *</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+        </div>
+
+        <!-- Personal Details -->
+        <h3>Personal Details</h3>
+
+        <div class="regibox">
+          <div class="form-group">
+            <label for="firstname">First Name *</label>
+            <input type="text" id="firstname" name="firstname" required />
+          </div>
+
+          <div class="form-group">
+            <label for="middlename">Middle Name</label>
+            <input type="text" id="middlename" name="middlename" />
+          </div>
+
+          <div class="form-group">
+            <label for="lastname">Last Name *</label>
+            <input type="text" id="lastname" name="lastname" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email ID *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="text" id="phone" name="phone" required />
+          </div>
+
+          <div class="form-group">
+            <label for="dob">Date of Birth *</label>
+            <input type="date" id="dob" name="dob" required />
+          </div>
+
+          <div class="form-group">
+            <label>Gender *</label>
+            <div style="display: flex">
+              <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="male"
+                required
+              />
+              <label for="male">Male</label>
+              <input type="radio" id="female" name="gender" value="female" />
+              <label for="female">Female</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address *</label>
+            <input type="text" id="address" name="address" required />
+          </div>
+
+          <div class="form-group">
+            <label for="city">City *</label>
+            <input type="text" id="city" name="cities" required />
+          </div>
+          <div class="form-group">
+            <label for="pincode">Pincode *</label>
+            <input type="text" id="pincode" name="pincode" required />
+          </div>
+        </div>
+        <!-- Previous Medical History -->
+        <h3>Previous Medical History</h3>
+
+        <div class="regibox">
+          <div class="form-group">
+            <label for="physician">Primary Care Physician *</label>
+            <select id="physician" name="physician">
+              <option value="" disabled selected>Select a Physician</option>
+              {% for doctor in doctors%}
+              <option value="{{doctor.id}}">{{doctor.username}}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="allergies">Known Allergies *</label>
+            <select id="allergies" name="allergies">
+              <option value="" disabled selected>Select an Allergy</option>
+              <option value="peanut">Peanut Allergy</option>
+              <option value="dairy">Dairy Allergy</option>
+              <option value="gluten">Gluten Intolerance</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="Medication">Current Medication *</label>
+            <select id="Medication" name="Medication">
+              <option value="" disabled selected>Select a Medication</option>
+              <option value="med1">Tablet</option>
+              <option value="med2">Inhalers</option>
+              <option value="med3">Injections</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="Conditions">Medical Conditions *</label>
+            <select id="Conditions" name="Conditions">
+              <option value="" disabled selected>Select a Condition</option>
+              <option value="condition1">COVID-19</option>
+              <option value="condition2">Common cold</option>
+              <option value="condition3">Asthma attack</option>
+            </select>
+          </div>
+        </div>
+      <div>
+        <input type="submit" value="Register" class="submit-btn" />
+        {% for message in messages%}
+        <p style="color: red; margin-top:10px; font-size:20px;text-align:center">{{message}}</p>
+        {% endfor %}
+      </div>
+      </form>
+    </div>
+  </body>
+</html>

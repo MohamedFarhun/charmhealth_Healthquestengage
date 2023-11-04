@@ -1,0 +1,1 @@
+{"result":{"text":"K J divided by m o l"},"status":"ok"}

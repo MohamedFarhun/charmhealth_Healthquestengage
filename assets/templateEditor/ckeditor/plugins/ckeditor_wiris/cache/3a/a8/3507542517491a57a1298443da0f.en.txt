@@ -1,0 +1,1 @@
+{"result":{"text":"Cl O subscript 3 to the power of 2 minus sign end exponent"},"status":"ok"}

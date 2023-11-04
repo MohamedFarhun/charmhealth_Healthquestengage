@@ -1,0 +1,1 @@
+{"result":{"text":"y subscript 2 equals 5 sin space 608 pi t"},"status":"ok"}

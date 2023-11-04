@@ -1,0 +1,1 @@
+{"result":{"text":"fraction numerator e minus 1 over denominator e end fraction almost equal to 63.2 percent sign"},"status":"ok"}

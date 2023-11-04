@@ -1,0 +1,1 @@
+{"result":{"text":"C subscript 6 H subscript 6 yields with Conc point H subscript 2 S O subscript 4 below and Conc point H N O subscript 3 on top B yields with Sn and HCL on top C yields with O minus sign 5 degree below and H N O subscript 2 on top D yields with H B F subscript 4 on top E yields with increment on top F"},"status":"ok"}

@@ -1,0 +1,240 @@
+{%load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #e5f4ff;
+      }
+      .container {
+        max-width: 80%;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      label {
+        display: block;
+        margin: 10px 0;
+      }
+      input[type="text"],
+      input[type="password"],
+      input[type="email"],
+      input[type="date"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      input[type="radio"] {
+        margin-right: 5px;
+      }
+      .submit-btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        justify-content: center;
+        background: #ffb236; 
+        display: inline-block; 
+        border-radius: 5px;
+        padding: 8px 15px; 
+        margin: 5px; 
+        font-size: 15px; 
+        color: #fff; 
+        text-transform: uppercase;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .end-game-btn{
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        justify-content: center;
+        background: #ffb236; 
+        display: inline-block; 
+        border-radius: 5px;
+        padding: 8px 15px; 
+        margin: 5px; 
+        font-size: 15px; 
+        color: #fff; 
+        text-transform: uppercase;
+        text-decoration: none;
+        cursor: pointer;
+        margin-top:90px
+      }
+      .regibox {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .regibox .form-group{
+        width: 44%;
+        margin: 10px 20px;
+      }
+
+      @media only screen and (max-width: 1024px) {
+        .regibox .form-group {
+          width: 95%;
+          margin: 10px 0px;
+        }
+      }
+      h2{ font-size: 30px; color: #014aa0; font-weight: bold;margin:0px}
+      h3 {
+        border-bottom: 2px solid #4caf50;
+        padding-bottom: 10px;
+        margin-top: 20px;
+        text-align:left
+      }
+      h4{ font-size: 20px; color: #014aa0; font-weight: bold;margin:0px}
+        #memory-game .card {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: #e5f4ff;
+            text-align: center;
+            line-height: 100px;
+            cursor: pointer;
+            position: relative;
+        }
+        .card-image {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        {% comment %} #puzzle-board{ display:flex; flex-wrap:wrap; width:900px !important; height:900px !important; margin:auto !important;  }
+        .puzzle-piece{ border:#ddd 1px solid !important; display: inline-block; width:300px !important; height: 300px !important;} {% endcomment %}
+
+        
+        .puzzle-piece{ border:red 1px solid !important; display: inline-block;}
+        .empty {
+          background: transparent !important;
+          border: 2px dashed #ccc;
+      }
+      .jqp-piece span {
+        color: #000 !important;
+      }
+
+      .jqPuzzle {
+        width:500px !important;
+        height: 500px !important;
+        display:none;
+        margin:auto;
+      }
+      .jqp-controls{ width:105%;}
+      .jqp-controls a{ background:#ffb236 !important; padding:8px 15px !important; margin:2px !important; font-size:15px !important; border-radius:4px !important; border:0px !important;}
+      .jqPuzzle .jqp-controls span{ background:#ffdfdf !important; margin-top:2px !important; margin-left:4px !important; padding:5px 10px 4px !important; border-radius:4px;}
+      .jqPuzzle.jqp-solved .jqp-controls span{ background:#9FEF86 !important; margin-top: }
+    </style>
+    </style>
+    {% include "doctorheader.html" %}
+<div class="text-center">
+    <h2>Patient Details form</h2>
+    <form action='predictions_patient' method="post">
+        {% csrf_token %}
+        <div class="regibox">
+            <div class="form-group col-md-12" style="display:flex;">
+              <div class="col-md-6" style="display:flex;">
+                <label for="Name" class="col-md-4 text-left">Name *</label>
+                <input type="text" id="Name" name="Name" class="col-md-8" required />
+              </div>
+              <div class="col-md-6" style="display:flex;">
+                <label class="col-md-4 text-left" for="Age">Age *</label>
+                <input type="text" id="Age" name="Age" required />
+              </div>
+            </div>
+  
+            <div class="form-group col-md-12" style="display:flex;">
+              <div class="col-md-6" style="display:flex;">
+                <label for="Weight" class="col-md-4 text-left">Weight *</label>
+                <input type="text" id="Weight" name="Weight" class="col-md-8" required />
+              </div>
+              <div class="col-md-6" style="display:flex;">
+                  <label class="col-md-4 text-left" for="Height">Height *</label>
+                  <input type="text" id="Height" name="Height" required />
+                </div>
+            </div>
+          </div>
+
+          <div class="form-group col-md-12" style="display:flex;">
+            <div class="col-md-6" style="display:flex;">
+              <label for="Blood Pressure" class="col-md-4 text-left">Blood Pressure *</label>
+              <input type="text" id="Blood Pressure" name="BloodPressure" class="col-md-8" required />
+            </div>
+            <div class="col-md-6" style="display:flex;">
+                <label class="col-md-4 text-left" for="Cholesterol">Cholesterol *</label>
+                <input type="text" id="Cholesterol" name="Cholesterol" required />
+              </div>
+          </div>
+        </div>
+  
+             <div class="form-group col-md-12" style="display:flex;">
+              <div class="col-md-6" style="display:flex;">
+              <label class="col-md-4 text-left" for="ExerciseHours">Exercise Hours *</label>
+              <input type="text" id="ExerciseHours" name="ExerciseHours" required />
+              </div>
+              <div class="col-md-6" style="display:flex;">
+               <label class="col-md-4 text-left" for="Smoking">Smoking</label>
+              <select name="Smoking" id="Smoking">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+              </div>
+            </div>
+  
+             <div class="form-group col-md-12" style="display:flex;">
+              <div class="col-md-6" style="display:flex;">
+              <label class="col-md-4 text-left" for="AlcoholConsumption">Alcohol Consumption *</label>
+              <select name="AlcoholConsumption" id="AlcoholConsumption">
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+              </select>
+              </div>
+              <div class="col-md-6" style="display:flex;">
+               <label class="col-md-4 text-left" for="Diet">Diet *</label>
+               <select name="Diet" id="Diet">
+                <option value="1">Vegetarian</option>
+                <option value="0">Non-Vegetarian</option>
+              </select>
+              </div>
+            </div>
+  
+             <div class="form-group col-md-12" style="display:flex;">
+              <div class="col-md-6" style="display:flex;">
+              <label class="col-md-4 text-left" for="SleepHours">Sleep Hours *</label>
+              <input type="text" id="SleepHours" name="SleepHours" required />
+              </div>
+              <div class="col-md-6" style="display:flex;">
+               <label class="col-md-4 text-left" for="StressLevel">Stress Level *</label>
+              <select name="StressLevel" id="StressLevel">
+                <option value="0">Low</option>
+                <option value="1">Medium</option>
+                <option value="2">High</option>
+              </select>
+              </div>
+            </div>
+            <div style="text-align:center; padding-top:15px; margin-top:15px; border-top:#ddd 3px dotted; width:100%;">
+              <button type="submit" class="submit-btn" style="display:inline-block; width:auto;">Submit</button>
+          </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+        {% include "footer.html" %}

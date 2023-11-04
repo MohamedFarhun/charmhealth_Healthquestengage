@@ -1,0 +1,1 @@
+{"result":{"text":"R bond C triple bond N space plus Sn Cl subscript 2 and H Cl yields A yields with H subscript 3 O to the power of plus sign on top RCHO"},"status":"ok"}

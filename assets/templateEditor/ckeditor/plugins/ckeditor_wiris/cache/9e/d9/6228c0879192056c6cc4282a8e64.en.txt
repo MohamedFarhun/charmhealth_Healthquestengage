@@ -1,0 +1,1 @@
+{"result":{"text":"left square bracket Co open parentheses OX close parentheses subscript 2 open parentheses O H close parentheses subscript 2 right square bracket to the power of negative sign 3 end exponent"},"status":"ok"}

@@ -1,0 +1,1 @@
+{"result":{"text":"10 to the power of 9 N divided by m squared"},"status":"ok"}

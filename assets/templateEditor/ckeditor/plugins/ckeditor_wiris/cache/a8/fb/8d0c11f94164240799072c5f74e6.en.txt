@@ -1,0 +1,1 @@
+{"result":{"text":"Cl to the power of minus sign"},"status":"ok"}

@@ -1,0 +1,1 @@
+{"result":{"text":"rightwards arrow with leftwards arrow with gamma on top on top"},"status":"ok"}

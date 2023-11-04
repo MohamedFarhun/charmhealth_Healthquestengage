@@ -1,0 +1,1 @@
+{"result":{"text":"Mn O subscript 4 to the power of minus sign comma Br O subscript 3 to the power of minus sign"},"status":"ok"}

@@ -1,0 +1,1 @@
+{"result":{"text":"fraction numerator d squared y over denominator d x squared end fraction"},"status":"ok"}

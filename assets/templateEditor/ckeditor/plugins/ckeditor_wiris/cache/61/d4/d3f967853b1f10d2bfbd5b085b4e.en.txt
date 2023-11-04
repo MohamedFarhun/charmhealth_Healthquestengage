@@ -1,0 +1,1 @@
+{"result":{"text":"B F subscript 3 less than B Cl subscript 3 less than B Br subscript 3"},"status":"ok"}

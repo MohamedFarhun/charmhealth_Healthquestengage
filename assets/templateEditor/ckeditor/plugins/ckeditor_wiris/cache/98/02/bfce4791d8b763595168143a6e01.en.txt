@@ -1,0 +1,1 @@
+{"result":{"text":"2 log 1 fourth"},"status":"ok"}

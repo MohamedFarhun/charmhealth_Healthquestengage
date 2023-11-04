@@ -1,0 +1,1 @@
+{"result":{"text":"rightwards harpoon over leftwards harpoon with open curly brackets table attributes columnalign left columnspacing 1.4ex end attributes row blank blank row blank blank end table close on top"},"status":"ok"}

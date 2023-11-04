@@ -1,0 +1,1 @@
+{"result":{"text":"C H subscript 3 minus C minus C minus C H subscript 3\nspace space space space space space space space space space space space parallel to space space space space parallel to\nspace space space space space space space space space space space space O space space space space O\n"},"status":"ok"}

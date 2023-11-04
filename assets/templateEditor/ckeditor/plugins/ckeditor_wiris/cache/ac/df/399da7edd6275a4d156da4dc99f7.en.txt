@@ -1,0 +1,1 @@
+{"result":{"text":"2 A plus B left right double arrow 2 C"},"status":"ok"}

@@ -1,0 +1,1 @@
+{"result":{"text":"less than increment subscript C U degree"},"status":"ok"}

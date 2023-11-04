@@ -1,0 +1,1 @@
+{"result":{"text":"y subscript 1 equals 4 sin 600 pi t"},"status":"ok"}

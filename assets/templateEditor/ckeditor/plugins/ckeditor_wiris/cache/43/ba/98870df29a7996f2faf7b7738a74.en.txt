@@ -1,0 +1,1 @@
+{"result":{"text":"left square bracket M to the power of 1 L cubed T to the power of negative 2 end exponent right square bracket"},"status":"ok"}

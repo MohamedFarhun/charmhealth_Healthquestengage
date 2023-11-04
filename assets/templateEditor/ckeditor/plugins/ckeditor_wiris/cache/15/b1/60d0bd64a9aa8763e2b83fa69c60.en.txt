@@ -1,0 +1,1 @@
+{"result":{"text":"P equals fraction numerator R T over denominator 2 V minus b end fraction minus space fraction numerator a over denominator 4 V squared end fraction"},"status":"ok"}

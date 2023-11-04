@@ -1,0 +1,1 @@
+{"result":{"text":"K subscript 4 open square brackets F e left parenthesis C N right parenthesis subscript 6 close square brackets"},"status":"ok"}

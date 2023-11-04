@@ -1,0 +1,1 @@
+{"result":{"text":"2 straight pi open parentheses straight R squared plus straight r squared close parentheses sq. space units"},"status":"ok"}

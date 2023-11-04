@@ -1,0 +1,1 @@
+{"result":{"text":"Ph bond O H and Ph bond C H subscript 2 bond O H"},"status":"ok"}

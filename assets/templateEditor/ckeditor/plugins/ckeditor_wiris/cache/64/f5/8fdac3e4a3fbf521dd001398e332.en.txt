@@ -1,0 +1,1 @@
+{"result":{"text":"C H subscript 3 minus C identical to C minus C H subscript 3 rightwards arrow from increment to H to the power of plus divided by K M N O subscript 4 of A rightwards arrow from left parenthesis 2 right parenthesis H to the power of plus to left parenthesis 1 right parenthesis L i A l H subscript 4 of B"},"status":"ok"}

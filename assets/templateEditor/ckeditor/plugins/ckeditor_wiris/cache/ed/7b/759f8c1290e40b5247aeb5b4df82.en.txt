@@ -1,0 +1,1 @@
+{"result":{"text":"U equals M divided by r to the power of 6 minus N divided by r to the power of 12"},"status":"ok"}

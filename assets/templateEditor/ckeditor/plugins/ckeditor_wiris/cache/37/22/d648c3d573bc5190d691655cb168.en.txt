@@ -1,0 +1,1 @@
+{"result":{"text":"C H subscript 3 minus C H O"},"status":"ok"}

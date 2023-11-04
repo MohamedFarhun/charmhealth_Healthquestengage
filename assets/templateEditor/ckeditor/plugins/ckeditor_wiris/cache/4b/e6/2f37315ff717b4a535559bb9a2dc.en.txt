@@ -1,0 +1,1 @@
+{"result":{"text":"B F subscript 3 greater than B Cl subscript 3 greater than B Br subscript 3"},"status":"ok"}
