@@ -1,0 +1,1 @@
+{"result":{"text":"K to the power of plus sign comma Cl to the power of minus sign comma Ca to the power of 2 plus sign"},"status":"ok"}

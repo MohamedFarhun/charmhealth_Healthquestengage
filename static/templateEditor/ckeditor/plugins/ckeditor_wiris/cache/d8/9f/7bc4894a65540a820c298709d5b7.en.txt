@@ -1,0 +1,1 @@
+{"result":{"text":"I point E subscript H greater than I point E subscript He to the power of plus sign end subscript greater than I point E subscript Li to the power of 2 plus sign end subscript"},"status":"ok"}

@@ -1,0 +1,1 @@
+{"result":{"text":"V equals K T to the power of 2 divided by 3 end exponent"},"status":"ok"}

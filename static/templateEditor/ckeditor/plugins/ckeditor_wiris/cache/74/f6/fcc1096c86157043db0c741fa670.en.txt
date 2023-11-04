@@ -1,0 +1,1 @@
+{"result":{"text":"2 N subscript 2 and glucose yields 2 space amino space acid"},"status":"ok"}

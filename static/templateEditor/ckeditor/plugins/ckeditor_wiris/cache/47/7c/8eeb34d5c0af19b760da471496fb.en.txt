@@ -1,0 +1,1 @@
+{"result":{"text":"r greater or equal than μg over straight omega squared"},"status":"ok"}

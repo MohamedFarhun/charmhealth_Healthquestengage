@@ -1,0 +1,1 @@
+{"result":{"text":"open parentheses a squared plus 2 a b plus b squared close parentheses"},"status":"ok"}

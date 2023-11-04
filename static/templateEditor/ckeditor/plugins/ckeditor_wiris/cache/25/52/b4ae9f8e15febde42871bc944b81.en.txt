@@ -1,0 +1,1 @@
+{"result":{"text":"left curly bracket n double bond m"},"status":"ok"}

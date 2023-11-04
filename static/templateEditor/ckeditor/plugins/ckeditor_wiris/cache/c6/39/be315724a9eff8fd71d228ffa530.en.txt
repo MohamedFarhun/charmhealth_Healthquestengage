@@ -1,0 +1,1 @@
+{"result":{"text":"Ph bond O bond C H subscript 2 bond Ph stack yields A and B with H I on top"},"status":"ok"}

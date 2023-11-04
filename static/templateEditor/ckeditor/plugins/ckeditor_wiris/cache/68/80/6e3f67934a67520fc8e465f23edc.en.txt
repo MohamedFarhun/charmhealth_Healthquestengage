@@ -1,0 +1,1 @@
+{"result":{"text":"left square bracket Fe open parentheses C N close parentheses subscript 6 right square bracket to the power of 4 minus sign end exponent"},"status":"ok"}

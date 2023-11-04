@@ -1,0 +1,1 @@
+{"result":{"text":"r equals mu g omega squared"},"status":"ok"}

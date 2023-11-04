@@ -1,0 +1,1 @@
+{"result":{"text":"open parentheses C H subscript 3 close parentheses subscript 2"},"status":"ok"}

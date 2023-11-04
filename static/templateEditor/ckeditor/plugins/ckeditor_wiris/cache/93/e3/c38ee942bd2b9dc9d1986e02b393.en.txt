@@ -1,0 +1,1 @@
+{"result":{"text":"4 r equals square root of 3 a"},"status":"ok"}

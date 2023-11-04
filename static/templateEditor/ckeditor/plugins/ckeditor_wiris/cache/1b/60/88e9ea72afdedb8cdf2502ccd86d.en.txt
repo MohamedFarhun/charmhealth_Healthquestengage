@@ -1,0 +1,1 @@
+{"result":{"text":"F to the power of minus sign"},"status":"ok"}

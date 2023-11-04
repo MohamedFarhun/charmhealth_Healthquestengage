@@ -1,0 +1,1 @@
+{"result":{"text":"N O subscript 3 to the power of minus sign comma N O subscript 2"},"status":"ok"}

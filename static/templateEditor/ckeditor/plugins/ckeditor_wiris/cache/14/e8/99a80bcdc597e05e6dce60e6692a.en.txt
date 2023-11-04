@@ -1,0 +1,1 @@
+{"result":{"text":"K subscript P equals K subscript C left parenthesis R T right parenthesis to the power of negative 1 end exponent"},"status":"ok"}

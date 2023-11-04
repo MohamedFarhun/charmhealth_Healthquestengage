@@ -1,0 +1,1 @@
+{"result":{"text":"K subscript P left parenthesis R T right parenthesis equals K subscript C"},"status":"ok"}

@@ -1,0 +1,1 @@
+{"result":{"text":"tan to the power of negative 1 end exponent open parentheses 3 over 4 close parentheses"},"status":"ok"}

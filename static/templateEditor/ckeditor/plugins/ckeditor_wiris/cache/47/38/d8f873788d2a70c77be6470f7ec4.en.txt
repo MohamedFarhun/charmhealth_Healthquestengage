@@ -1,0 +1,1 @@
+{"result":{"text":"increment subscript c H degree"},"status":"ok"}

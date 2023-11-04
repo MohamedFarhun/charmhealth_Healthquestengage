@@ -1,0 +1,1 @@
+{"result":{"text":"E with rightwards arrow on top equals 4 i left parenthesis N C to the power of negative 1 end exponent right parenthesis"},"status":"ok"}

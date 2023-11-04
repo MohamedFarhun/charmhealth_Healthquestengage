@@ -1,0 +1,1 @@
+{"result":{"text":"open parentheses H subscript 2 O close parentheses subscript 4 right square bracket to the power of 2 plus end exponent"},"status":"ok"}

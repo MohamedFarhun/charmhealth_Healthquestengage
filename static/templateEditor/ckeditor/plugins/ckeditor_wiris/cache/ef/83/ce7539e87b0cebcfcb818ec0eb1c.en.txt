@@ -1,0 +1,1 @@
+{"result":{"text":"open square brackets Ni open parentheses H subscript 2 O close parentheses subscript 4 close square brackets to the power of 2 plus end exponent"},"status":"ok"}

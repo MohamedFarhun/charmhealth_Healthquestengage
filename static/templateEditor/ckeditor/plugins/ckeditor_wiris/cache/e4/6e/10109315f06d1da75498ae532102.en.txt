@@ -1,0 +1,1 @@
+{"result":{"text":"U equals M over r to the power of 6 minus N over r to the power of 12"},"status":"ok"}

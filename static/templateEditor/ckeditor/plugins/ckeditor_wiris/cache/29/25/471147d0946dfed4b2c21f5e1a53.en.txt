@@ -1,0 +1,1 @@
+{"result":{"text":"N subscript 15 divided by N subscript 15 colon N subscript 15 divided by N subscript 14 colon N subscript 14 divided by N subscript 14"},"status":"ok"}

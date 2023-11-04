@@ -1,0 +1,1 @@
+{"result":{"text":"rightwards arrow from increment to H subscript 3 P O subscript 4 of"},"status":"ok"}

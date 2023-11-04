@@ -1,0 +1,1 @@
+{"result":{"text":"x equals bevelled y over z squared"},"status":"ok"}

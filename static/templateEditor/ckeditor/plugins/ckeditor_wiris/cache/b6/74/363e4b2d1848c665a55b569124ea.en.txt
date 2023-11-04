@@ -1,0 +1,1 @@
+{"result":{"text":"3 square root of g over 2 end root"},"status":"ok"}

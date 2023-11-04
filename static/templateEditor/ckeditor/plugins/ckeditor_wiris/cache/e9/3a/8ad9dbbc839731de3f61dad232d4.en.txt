@@ -1,0 +1,1 @@
+{"result":{"text":"r subscript 2 H end subscript greater than r subscript 1 He to the power of plus sign end subscript greater than r subscript 1 H end subscript"},"status":"ok"}

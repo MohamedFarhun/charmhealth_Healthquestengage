@@ -1,0 +1,1 @@
+{"result":{"text":"a over b asterisk times fraction numerator c over denominator d space end fraction space equals space fraction numerator a c over denominator b d end fraction"},"status":"ok"}

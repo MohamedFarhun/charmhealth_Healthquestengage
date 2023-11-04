@@ -1,0 +1,1 @@
+{"result":{"text":"open parentheses A plus B close parentheses squared space equals"},"status":"ok"}

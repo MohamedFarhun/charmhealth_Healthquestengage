@@ -1,0 +1,1 @@
+{"result":{"text":"r less or equal than fraction numerator mu g over denominator omega squared end fraction"},"status":"ok"}
